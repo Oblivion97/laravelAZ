@@ -41,3 +41,19 @@ jump to previous commit:
 create a branch from previous commit:
 >git branch authentication
 
+--------------------------------------------------------------------------------
+laravel cache & config clear:
+>php artisan cache:clear
+>php artisan config:clear
+>php artisan config:cache
+
+----------------------------------------------------------------------------------------------------------------
+mail trap authentication configuration:
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=465
+MAIL_USERNAME=3f4da7505a7616
+MAIL_PASSWORD=7fc4057615522b
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS=b8e8537987-ff62bc@inbox.mailtrap.io
+MAIL_FROM_NAME="${APP_NAME}"
