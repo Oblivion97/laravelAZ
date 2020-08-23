@@ -1,0 +1,43 @@
+C:\xampp\apache\conf\extra
+
+<VirtualHost *:80>
+	DocumentRoot "C:/xampp/htdocs/lblog/public"
+	ServerName lblog.local
+
+	<Directory "C:/xampp/htdocs/lblog/public">
+		AllowOverride All
+		Require all granted
+	</Directory>
+</VirtualHost>
+
+laravelAZ.local
+
+C:\Windows\System32\drivers\etc
+127.0.0.1       lblog.local
+
+See git status:
+>git status
+
+See git log:
+>git log
+
+pull updates from git:
+>git fetch --all
+>git pull -all
+
+git stage multiple file at once:
+>git add .
+
+commit the changes:
+>git commit -m "message"
+
+push the changes to git master branch:
+>git push origin master
+
+
+jump to previous commit:
+> git checkout 67b906f9764534057ef826c179160066d08b39e5
+
+create a branch from previous commit:
+>git branch authentication
+
