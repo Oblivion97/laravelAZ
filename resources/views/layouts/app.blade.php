@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="{{ asset('panel/assets/plugins/metismenu-3.0.4/assets/css/mm-vertical-hover.css') }}">
     <!-- chart -->
 
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+
     <!-- <link rel="stylesheet" href="assets/plugins/chartjs-bar-chart/chart.css"> -->
     <!--Custom CSS-->
     <link rel="stylesheet" href="{{ asset('panel/assets/css/style.css') }}">
@@ -52,7 +54,9 @@
                         <div class="modal-content bg-transparent">
                             <!-- Modal body -->
                             <div class="modal-body">
-                                <input class="form-control bg-transparent text-white form-control-lg"  type="text" placeholder="Search...">
+                                <label>
+                                    <input class="form-control bg-transparent text-white form-control-lg"  type="text" placeholder="Search...">
+                                </label>
                                 <button class="btn btn-lg submit-btn" type="submit">Search</button>
                             </div>
                         </div>
@@ -426,11 +430,33 @@
 <!-- pie chart -->
 <script src="{{ asset('panel/assets/plugins/pie_chart/chart.loader.js') }}"></script>
 <script src="{{ asset('panel/assets/plugins/pie_chart/pie.active.js') }}"></script>
-
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 <!-- Main js -->
 <script src="{{ asset('panel/assets/js/main.js') }}"></script>
 
+<script>
+    @if(Session::has('message'))
+    let type = "{{Session::get('alert-type','info')}}"
+    switch (type) {
+        case 'info':
+            toastr.info("{{Session::get('message')}}");
+            break;
+
+        case 'success':
+            toastr.success("{{Session::get('message')}}");
+            break;
+
+        case 'warning':
+            toastr.warning("{{Session::get('message')}}");
+            break;
+
+        case 'error':
+            toastr.error("{{Session::get('message')}}");
+            break;
+    }
+    @endif
+</script>
 
 
 

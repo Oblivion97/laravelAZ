@@ -28,6 +28,12 @@ class HomeController extends Controller
     }
 
     public function logout(){
+        /*Auth::logout();*/
         Auth::logout();
+        $nitification = array(
+            'message' => 'successfully logged out',
+            'alert-type' => 'success'
+        );
+        return redirect()->route('login')->withInput($nitification);
     }
 }
