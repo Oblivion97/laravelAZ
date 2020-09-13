@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -27,13 +27,19 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function logout(){
-        /*Auth::logout();*/
+
+    public function Logout(){
+        // Auth::logout();
+
         Auth::logout();
-        $nitification = array(
-            'message' => 'successfully logged out',
+        $notification = array(
+            'message' => 'Successfully Logout',
             'alert-type' => 'success'
         );
-        return redirect()->route('login')->withInput($nitification);
+
+        return Redirect()->route('login')->with($notification);
+
     }
+
+
 }
